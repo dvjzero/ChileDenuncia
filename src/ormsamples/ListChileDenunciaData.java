@@ -65,14 +65,6 @@ public class ListChileDenunciaData {
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
-		System.out.println("Listing Login...");
-		orm.Login[] ormLogins = orm.LoginDAO.listLoginByQuery(null, null);
-		length = Math.min(ormLogins.length, ROW_COUNT);
-		for (int i = 0; i < length; i++) {
-			System.out.println(ormLogins[i]);
-		}
-		System.out.println(length + " record(s) retrieved.");
-		
 		System.out.println("Listing Contacto...");
 		orm.Contacto[] ormContactos = orm.ContactoDAO.listContactoByQuery(null, null);
 		length = Math.min(ormContactos.length, ROW_COUNT);
@@ -183,18 +175,6 @@ public class ListChileDenunciaData {
 			 System.out.println(ormTipoautoridads[i]);
 		}
 		System.out.println(length + " Tipoautoridad record(s) retrieved."); 
-		
-		System.out.println("Listing Login by Criteria...");
-		orm.LoginCriteria lormLoginCriteria = new orm.LoginCriteria();
-		// Please uncomment the follow line and fill in parameter(s) 
-		//lormLoginCriteria.lo_id.eq();
-		lormLoginCriteria.setMaxResults(ROW_COUNT);
-		orm.Login[] ormLogins = lormLoginCriteria.listLogin();
-		length =ormLogins== null ? 0 : Math.min(ormLogins.length, ROW_COUNT); 
-		for (int i = 0; i < length; i++) {
-			 System.out.println(ormLogins[i]);
-		}
-		System.out.println(length + " Login record(s) retrieved."); 
 		
 		System.out.println("Listing Contacto by Criteria...");
 		orm.ContactoCriteria lormContactoCriteria = new orm.ContactoCriteria();

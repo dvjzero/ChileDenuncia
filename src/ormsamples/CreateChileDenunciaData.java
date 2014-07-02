@@ -10,7 +10,7 @@ public class CreateChileDenunciaData {
 		PersistentTransaction t = orm.ChileDenunciaPersistentManager.instance().getSession().beginTransaction();
 		try {
 			orm.Usuario lormUsuario = orm.UsuarioDAO.createUsuario();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : login, autoridad, denuncia, usu_nombre
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : autoridad, denuncia, usu_nombre
 			orm.UsuarioDAO.save(lormUsuario);
 			orm.Denuncia lormDenuncia = orm.DenunciaDAO.createDenuncia();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : visardenuncia, fichero_evidencia, estadistica, estado_denunciaed, usuariousu
@@ -30,11 +30,8 @@ public class CreateChileDenunciaData {
 			orm.Tipoautoridad lormTipoautoridad = orm.TipoautoridadDAO.createTipoautoridad();
 			// Initialize the properties of the persistent object here
 			orm.TipoautoridadDAO.save(lormTipoautoridad);
-			orm.Login lormLogin = orm.LoginDAO.createLogin();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : usuariousu
-			orm.LoginDAO.save(lormLogin);
 			orm.Contacto lormContacto = orm.ContactoDAO.createContacto();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : usuariousu_id
+			// Initialize the properties of the persistent object here
 			orm.ContactoDAO.save(lormContacto);
 			orm.Autentificacion_red_social lormAutentificacion_red_social = orm.Autentificacion_red_socialDAO.createAutentificacion_red_social();
 			// Initialize the properties of the persistent object here

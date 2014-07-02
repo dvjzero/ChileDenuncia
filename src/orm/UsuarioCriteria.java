@@ -58,10 +58,6 @@ public class UsuarioCriteria extends AbstractORMCriteria {
 		return new AutoridadCriteria(createCriteria("autoridad"));
 	}
 	
-	public LoginCriteria createLoginCriteria() {
-		return new LoginCriteria(createCriteria("ORM_login"));
-	}
-	
 	public Usuario uniqueUsuario() {
 		return (Usuario) super.uniqueResult();
 	}

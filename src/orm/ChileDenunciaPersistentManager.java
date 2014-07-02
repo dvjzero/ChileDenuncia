@@ -43,7 +43,6 @@ public class ChileDenunciaPersistentManager extends PersistentManager {
 		configuration.addAnnotatedClass(orm.Autoridad.class);
 		configuration.addAnnotatedClass(orm.Fichero_evidencia.class);
 		configuration.addAnnotatedClass(orm.Tipoautoridad.class);
-		configuration.addAnnotatedClass(orm.Login.class);
 		configuration.addAnnotatedClass(orm.Contacto.class);
 		configuration.addAnnotatedClass(orm.Autentificacion_red_social.class);
 		configuration.addAnnotatedClass(orm.Visardenuncia.class);

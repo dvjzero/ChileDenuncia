@@ -30,9 +30,6 @@ public class RetrieveAndUpdateChileDenunciaData {
 			orm.Tipoautoridad lormTipoautoridad = orm.TipoautoridadDAO.loadTipoautoridadByQuery(null, null);
 			// Update the properties of the persistent object
 			orm.TipoautoridadDAO.save(lormTipoautoridad);
-			orm.Login lormLogin = orm.LoginDAO.loadLoginByQuery(null, null);
-			// Update the properties of the persistent object
-			orm.LoginDAO.save(lormLogin);
 			orm.Contacto lormContacto = orm.ContactoDAO.loadContactoByQuery(null, null);
 			// Update the properties of the persistent object
 			orm.ContactoDAO.save(lormContacto);
@@ -92,12 +89,6 @@ public class RetrieveAndUpdateChileDenunciaData {
 		// Please uncomment the follow line and fill in parameter(s)
 		//lormTipoautoridadCriteria.id.eq();
 		System.out.println(lormTipoautoridadCriteria.uniqueTipoautoridad());
-		
-		System.out.println("Retrieving Login by LoginCriteria");
-		orm.LoginCriteria lormLoginCriteria = new orm.LoginCriteria();
-		// Please uncomment the follow line and fill in parameter(s)
-		//lormLoginCriteria.lo_id.eq();
-		System.out.println(lormLoginCriteria.uniqueLogin());
 		
 		System.out.println("Retrieving Contacto by ContactoCriteria");
 		orm.ContactoCriteria lormContactoCriteria = new orm.ContactoCriteria();

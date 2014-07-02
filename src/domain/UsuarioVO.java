@@ -1,7 +1,7 @@
 package domain;
 
 public class UsuarioVO {
-
+    private int id;
 	private String nombre;
 	private String clave;
 	private String ciudad;
@@ -11,15 +11,30 @@ public class UsuarioVO {
 	public UsuarioVO() {
 		super();
 	}
-	public UsuarioVO(String nombre, String clave, String ciudad, String sector,
-			String mail, Integer desactivar) {
+
+	public UsuarioVO(int id, String nombre, String clave, String ciudad,
+			String sector, String mail, Integer desactivar) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.clave = clave;
 		this.ciudad = ciudad;
 		this.sector = sector;
 		this.mail = mail;
 		this.desactivar = desactivar;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 	/**
 	 * @return the nombre

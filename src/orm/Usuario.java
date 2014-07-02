@@ -26,9 +26,6 @@ public class Usuario implements Serializable {
 		if (key == orm.ORMConstants.KEY_USUARIO_DENUNCIA) {
 			return ORM_denuncia;
 		}
-		else if (key == orm.ORMConstants.KEY_USUARIO_LOGIN) {
-			return ORM_login;
-		}
 		
 		return null;
 	}
@@ -94,11 +91,6 @@ public class Usuario implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private orm.Autoridad autoridad;
-	
-	@OneToMany(mappedBy="usuariousu", targetEntity=orm.Login.class)	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
-	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM_login = new java.util.HashSet();
 	
 	private void setUsu_id(int value) {
 		this.usu_id = value;
@@ -215,17 +207,6 @@ public class Usuario implements Serializable {
 	public orm.Autoridad getAutoridad() {
 		return autoridad;
 	}
-	
-	private void setORM_Login(java.util.Set value) {
-		this.ORM_login = value;
-	}
-	
-	private java.util.Set getORM_Login() {
-		return ORM_login;
-	}
-	
-	@Transient	
-	public final orm.LoginSetCollection login = new orm.LoginSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_USUARIO_LOGIN, orm.ORMConstants.KEY_LOGIN_USUARIOUSU, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getUsu_id());

@@ -6,6 +6,10 @@ import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
 
+
+
+import orm.DenunciaDAO;
+import orm.UsuarioDAO;
 import domain.DenunciaVO;
 
 
@@ -26,11 +30,23 @@ public class ServicioDenuncia {
 	t= orm.ChileDenunciaPersistentManager.instance().getSession().beginTransaction();
 	
 	try {
+		String usuarioRepetido="";
+		usuarioRepetido +="usu_nombre='"+oDenunciaVO.getUsuario_creador()+"'";
+		orm.Usuario  usuario  =UsuarioDAO.loadUsuarioByQuery(usuarioRepetido,null);
+		if(oDenunciaVO.getTipo() ==""||oDenunciaVO.getDenuncia() ==""||oDenunciaVO.getCiudad() ==""||oDenunciaVO.getSector() ==""||
+				oDenunciaVO.getUsuario_creador() ==""){
+			return "ingrese todos los campos";	
+		}
+		else if(usuario == null){
+			
+			return "no existe el usuario";
+		}else {
 	orm.Denuncia lormDenuncia = orm.DenunciaDAO.createDenuncia();
 	// Initialize the properties of the persistent object here
-
-	
+    
+	// por defecto 1
 	orm.Estado_denuncia lormEstado_denuncia = orm.Estado_denunciaDAO.getEstado_denunciaByORMID(1);
+	//por defecto 1
 	orm.Usuario usuarioDenuncia = orm.UsuarioDAO.getUsuarioByORMID(1);
 	lormDenuncia.setEstado_denunciaed(lormEstado_denuncia);
 	lormDenuncia.setDen_tipo(oDenunciaVO.getTipo());
@@ -40,25 +56,23 @@ public class ServicioDenuncia {
 	lormDenuncia.setDen_sector(oDenunciaVO.getSector());
 	lormDenuncia.setDen_fecha_creacion(oDenunciaVO.getFecha_creacion());
 	lormDenuncia.setDen_fecha_modificacion(oDenunciaVO.getFecha_modificacion());
+	
+
 	lormDenuncia.setDen_usuario_creador(oDenunciaVO.getUsuario_creador());
+	
+	
 	lormDenuncia.setDen_usuario_modificador(oDenunciaVO.getUsuario_modificador());
 	lormDenuncia.setDen_fecha_usuario_modifica(oDenunciaVO.getFecha_usuario_modifica());
 	lormDenuncia.setDen_desactivar(oDenunciaVO.getDesactivar());
 	
 	
-	System.out.println("Ingreso Exitoso");
+	
 	
 	/**
 	* Valida que el objeto no sea vacio, o  sea que tenga algun valor ingresado
 	* @param 
 	* @return
 	*/
-	
-	if(lormDenuncia.getDen_tipo().equals("")||lormDenuncia.getDen_denuncia().equals("")||lormDenuncia.getDen_ciudad().equals("")||lormDenuncia.getDen_sector().equals("")||
-			lormDenuncia.getDen_usuario_creador().equals("")){
-		return "ingrese todos los campos";	
-	}
-	else{
 		orm.DenunciaDAO.save(lormDenuncia);
 		t.commit();
 		return "ingreso existoso";
@@ -125,7 +139,7 @@ public class ServicioDenuncia {
 	
 	
 	/**
-	* Elimina el contacto a traves del nombre en la base de datos
+	* Elimina la denuncia a traves del nombre en la base de datos
 	* @return List<domain.DenunciaVO>
 	*/
 	public String eliminarDenuncia(String fecha_creacion) { // domain.DenunciaVO
@@ -156,7 +170,10 @@ return "Error persistencia";
 	
 	
 	
-	
+	/**
+	* Permite realizar una búsqueda filtrando por el usuario creador de la denuncia
+	* @return List<domain.DenunciaVO>
+	*/
 	
 	
 	public List<domain.DenunciaVO> filtrarDenuncia(String usuario_creador)	{

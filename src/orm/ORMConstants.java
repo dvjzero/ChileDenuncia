@@ -38,8 +38,6 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_FICHERO_EVIDENCIA_DENUNCIADEN = -713933734;
 	
-	final int KEY_LOGIN_USUARIOUSU = -1097401761;
-	
 	final int KEY_TIPOAUTORIDAD_AUTORIDAD = -2005372753;
 	
 	final int KEY_USUARIO_AUTENTIFICACION_RED_SOCIALAU = -214098437;
@@ -47,8 +45,6 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_USUARIO_AUTORIDAD = -1142253136;
 	
 	final int KEY_USUARIO_DENUNCIA = -2108919386;
-	
-	final int KEY_USUARIO_LOGIN = 2089999096;
 	
 	final int KEY_VISARDENUNCIA_AUTORIDADAU = -1107267172;
 	

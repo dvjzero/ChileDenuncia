@@ -30,9 +30,6 @@ public class DeleteChileDenunciaData {
 			orm.Tipoautoridad lormTipoautoridad = orm.TipoautoridadDAO.loadTipoautoridadByQuery(null, null);
 			// Delete the persistent object
 			orm.TipoautoridadDAO.delete(lormTipoautoridad);
-			orm.Login lormLogin = orm.LoginDAO.loadLoginByQuery(null, null);
-			// Delete the persistent object
-			orm.LoginDAO.delete(lormLogin);
 			orm.Contacto lormContacto = orm.ContactoDAO.loadContactoByQuery(null, null);
 			// Delete the persistent object
 			orm.ContactoDAO.delete(lormContacto);

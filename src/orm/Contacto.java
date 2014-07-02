@@ -34,14 +34,11 @@ public class Contacto implements Serializable {
 	@Column(name="con_correo", nullable=true, length=50)	
 	private String con_correo;
 	
-	@Column(name="con_asunto", nullable=true, length=3)	
-	private Integer con_asunto;
+	@Column(name="con_asunto", nullable=true, length=50)	
+	private String con_asunto;
 	
 	@Column(name="con_mensaje", nullable=true, length=255)	
 	private String con_mensaje;
-	
-	@Column(name="usuariousu_id", nullable=false, length=10)	
-	private int usuariousu_id;
 	
 	private void setCon_id(int value) {
 		this.con_id = value;
@@ -71,15 +68,11 @@ public class Contacto implements Serializable {
 		return con_correo;
 	}
 	
-	public void setCon_asunto(int value) {
-		setCon_asunto(new Integer(value));
-	}
-	
-	public void setCon_asunto(Integer value) {
+	public void setCon_asunto(String value) {
 		this.con_asunto = value;
 	}
 	
-	public Integer getCon_asunto() {
+	public String getCon_asunto() {
 		return con_asunto;
 	}
 	
@@ -89,14 +82,6 @@ public class Contacto implements Serializable {
 	
 	public String getCon_mensaje() {
 		return con_mensaje;
-	}
-	
-	public void setUsuariousu_id(int value) {
-		this.usuariousu_id = value;
-	}
-	
-	public int getUsuariousu_id() {
-		return usuariousu_id;
 	}
 	
 	public String toString() {

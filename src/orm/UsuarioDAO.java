@@ -334,10 +334,6 @@ public class UsuarioDAO {
 				usuario.getAutoridad().setUsuariousu(null);
 			}
 			
-			orm.Login[] lLogins = usuario.login.toArray();
-			for(int i = 0; i < lLogins.length; i++) {
-				lLogins[i].setUsuariousu(null);
-			}
 			return delete(usuario);
 		}
 		catch(Exception e) {
@@ -360,10 +356,6 @@ public class UsuarioDAO {
 				usuario.getAutoridad().setUsuariousu(null);
 			}
 			
-			orm.Login[] lLogins = usuario.login.toArray();
-			for(int i = 0; i < lLogins.length; i++) {
-				lLogins[i].setUsuariousu(null);
-			}
 			try {
 				session.delete(usuario);
 				return true;

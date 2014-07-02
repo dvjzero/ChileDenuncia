@@ -11,7 +11,7 @@ public class CreateDataEstado {
 		try {
 			orm.Estado_denuncia lormEstado_denuncia = orm.Estado_denunciaDAO.createEstado_denuncia();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : denuncia
-			lormEstado_denuncia.setEd_estado_actual(0);
+			lormEstado_denuncia.setEd_estado_actual(1);
 			orm.Estado_denunciaDAO.save(lormEstado_denuncia);
 			t.commit();
 		}

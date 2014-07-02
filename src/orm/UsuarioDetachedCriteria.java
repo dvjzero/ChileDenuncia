@@ -61,10 +61,6 @@ public class UsuarioDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new AutoridadDetachedCriteria(createCriteria("autoridad"));
 	}
 	
-	public LoginDetachedCriteria createLoginCriteria() {
-		return new LoginDetachedCriteria(createCriteria("ORM_login"));
-	}
-	
 	public Usuario uniqueUsuario(PersistentSession session) {
 		return (Usuario) super.createExecutableCriteria(session).uniqueResult();
 	}

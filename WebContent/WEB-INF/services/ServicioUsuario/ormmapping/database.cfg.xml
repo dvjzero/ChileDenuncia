@@ -261,12 +261,12 @@
     <DriverFiles>D:\PDS\mysql-connector-java-5.1.26\mysql-connector-java-5.1.26-bin.jar</DriverFiles>
     <Dialect>org.hibernate.dialect.MySQLDialect</Dialect>
     <DriverClass>com.mysql.jdbc.Driver</DriverClass>
-    <URL>jdbc:mysql://localhost:3306/ChileDenuncia</URL>
+    <URL>jdbc:mysql://127.0.0.1:3306/chiledenuncia3</URL>
     <UserName>root</UserName>
-    <Password>1234</Password>
-    <HostName>localhost</HostName>
+    <Password></Password>
+    <HostName>127.0.0.1</HostName>
     <PortNO>3306</PortNO>
-    <DBName>ChileDenuncia</DBName>
+    <DBName>chiledenuncia3</DBName>
     <ServiceName></ServiceName>
     <ServerName></ServerName>
     <SelectedForm>true</SelectedForm>
